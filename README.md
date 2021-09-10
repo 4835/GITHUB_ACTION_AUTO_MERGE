@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @jhleeO
+- 👋 Hi, I’m @jhlee
 
 <!---
 jhleeO/jhleeO is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
