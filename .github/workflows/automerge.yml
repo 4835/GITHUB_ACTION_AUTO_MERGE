@@ -13,4 +13,4 @@ jobs:
       with:
         merge-method: 'merge' 
         min-approvals: 1 
-        base-ref: 'master'
+        base-ref: 'main'
