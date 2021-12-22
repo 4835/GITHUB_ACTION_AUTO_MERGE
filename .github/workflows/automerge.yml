@@ -7,10 +7,10 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-    - uses: davideviolante/pr-automerge-action@v1.2.2
+    - uses: pascalgn/automerge-action@v0.14.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        merge-method: 'merge' 
-        min-approvals: 1
-        base-ref: 'main'
+        MERGE_METHOD: 'merge'
+        MERGE_REQUIRED_APPROVALS: 1
+        UPDATE_LABELS: ""
+        MERGE_LABELS: ""
