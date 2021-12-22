@@ -15,3 +15,5 @@ jobs:
           MERGE_METHOD: "merge"
           UPDATE_METHOD: "rebase"
           MERGE_LABELS: ""
+          UPDATE_LABELS: ""
+          MERGE_REQUIRED_APPROVALS: 1
