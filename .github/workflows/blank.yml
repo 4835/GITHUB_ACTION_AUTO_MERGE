@@ -1,0 +1,16 @@
+name: automerge
+on:
+  pull_request_review:
+    types: [submitted]
+jobs:
+  pr-automerge:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: davideviolante/pr-automerge-action@v1.2.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        merge-method: 'merge' 
+        min-approvals: 1 
+        base-ref: 'master'
