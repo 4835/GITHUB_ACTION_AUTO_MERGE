@@ -12,10 +12,8 @@ jobs:
     - uses: pascalgn/automerge-action@v0.14.3
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      with:
-        MERGE_METHOD: 'merge' 
-        min-approvals: 1
-        base-ref: 'main'
+        MERGE_METHOD: "merge"
         UPDATE_METHOD: "rebase"
         MERGE_LABELS: ""
         UPDATE_LABELS: ""
+        MERGE_REQUIRED_APPROVALS: "1"
