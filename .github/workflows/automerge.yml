@@ -12,3 +12,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MERGE_METHOD: 'merge'
         MERGE_REQUIRED_APPROVALS: 1
+        UPDATE_LABELS: ""
+        MERGE_LABELS: ""
