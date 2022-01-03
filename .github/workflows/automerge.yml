@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: davideviolante/pr-automerge-action@v1.2.2
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${ secrets.TT }
       with:
         merge-method: 'merge' 
         min-approvals: 1
