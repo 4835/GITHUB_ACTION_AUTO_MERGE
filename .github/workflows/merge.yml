@@ -6,13 +6,14 @@ on:
     types:
      - completed
 jobs:
-  runs-on: ubuntu-latest
-  if: ${{ github.event.workflow_run.event == 'pull_request_review' && github.evnet.workflow_run.conclusion = 'success'}}
-  steps:
-  - uses: davideviolante/pr-automerge-action@v1.2.2
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      merge-method: 'merge' 
-      min-approvals: 1
-      base-ref: 'main'
+  merge-pr:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.event == 'pull_request_review' && github.evnet.workflow_run.conclusion = 'success'}}
+    steps:
+    - uses: davideviolante/pr-automerge-action@v1.2.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        merge-method: 'merge' 
+        min-approvals: 1
+        base-ref: 'main'
