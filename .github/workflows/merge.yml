@@ -9,10 +9,13 @@ jobs:
   merge-pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: davideviolante/pr-automerge-action@v1.2.2
+    - uses: pascalgn/automerge-action@v0.14.3
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       with:
-        merge-method: 'merge' 
+        MERGE_METHOD: 'merge' 
         min-approvals: 1
         base-ref: 'main'
+        UPDATE_METHOD: "rebase"
+        MERGE_LABELS: ""
+        UPDATE_LABELS: ""
