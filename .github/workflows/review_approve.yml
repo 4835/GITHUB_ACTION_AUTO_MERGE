@@ -10,7 +10,9 @@ jobs:
       - name : Save PR number
         run  : |
           mkdir -p ./pr
-          echo ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }} > ./pr/NR
+          echo ${{ github.server_url }}/${{ github.repository }}/pull/$PR_NUMBER > ./pr/NR
+        env :
+          PR_NUMBER: ${{ github.event.number }}
       - uses: actions/upload-artifact@v2
         with:
           name: pr
