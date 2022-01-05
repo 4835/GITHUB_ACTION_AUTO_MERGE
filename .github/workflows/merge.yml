@@ -1,17 +1,15 @@
-name: Merge PR
-
+name: automerge
 on:
-  workflow_run:
-    workflows: ["automerge"]
-    types:
-     - completed
+  pull_request_target:
+    types: [auto_merge_enabled]
 jobs:
-  merge-pr:
+  pr-automerge:
     runs-on: ubuntu-latest
     steps:
-    - uses: pascalgn/automerge-action@v0.14.3
+    - uses: davideviolante/pr-automerge-action@v1.2.2
       env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        MERGE_METHOD: "merge"
-        MERGE_LABELS: ""
-        UPDATE_LABELS: ""
+        GITHUB_TOKEN: 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
+      with:
+        merge-method: 'merge' 
+        min-approvals: 1
+        base-ref: 'main'
