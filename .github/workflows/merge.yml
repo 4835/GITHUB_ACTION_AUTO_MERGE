@@ -1,7 +1,9 @@
 name: automerge
 on:
-  pull_request_target:
-    types: [auto_merge_enabled]
+  workflow_run:
+    workflows: ["automerge"]
+    types:
+      - completed
 jobs:
   pr-automerge:
     runs-on: ubuntu-latest
@@ -12,4 +14,4 @@ jobs:
       with:
         merge-method: 'merge' 
         min-approvals: 1
-        base-ref: 'main'
+        base-ref: 'master'
