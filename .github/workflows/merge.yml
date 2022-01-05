@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enable auto-merge for Dependabot PRs
-        run: gh pr merge --auto --merge "https://github.com/6233/jhleeO/pull/62"
+        run: gh pr merge --auto --merge "$PR_URL"
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
+          PR_URL: ${{github.event.workflow_run.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
