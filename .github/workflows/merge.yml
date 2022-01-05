@@ -31,8 +31,14 @@ jobs:
       - run: unzip pr.zip    
     
       - name: Enable auto-merge for Dependabot PRs
-        run: |
-          echo $(cat ./NR)
-          gh pr merge --auto --merge "https://github.com/6233/jhleeO/pull/$(cat ./NR)"
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var issue_number = Number(fs.readFileSync('./NR'));
+      - run: |
+          echo ${{issue_number}}
+          gh pr merge --auto --merge "https://github.com/6233/jhleeO/pull/${issue_number}"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
