@@ -32,7 +32,7 @@ jobs:
      
       - name: 'merge'
         run: |
-          echo $(cat pr/NR)
+          echo $(ls -R)
           gh pr merge --auto --merge "https://github.com/6233/jhleeO/pull/$(cat pr/NR)"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
