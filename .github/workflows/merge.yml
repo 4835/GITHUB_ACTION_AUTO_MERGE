@@ -8,6 +8,7 @@ jobs:
   pr-automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - uses: plm9606/automerge_actions@1.2.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-delete: false
