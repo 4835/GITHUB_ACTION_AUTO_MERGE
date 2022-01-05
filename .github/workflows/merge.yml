@@ -8,8 +8,6 @@ jobs:
   pr-automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Merge me!
-        uses: ridedott/merge-me-action@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_METHOD: MERGE
