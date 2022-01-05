@@ -1,0 +1,21 @@
+name: approve check
+on:
+  pull_request_review:
+    types: [submitted]
+jobs:
+  pr-automerge:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name : Save PR number
+        run  : |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/NR
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: pr/
+          
+      - name: PR approved
+        run: |
+          echo "PR approved" 
