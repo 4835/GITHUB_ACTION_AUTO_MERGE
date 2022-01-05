@@ -1,8 +1,7 @@
 name: PR Merge
 on:
   pull_request_target:
-    types:
-      - auto_merge_enabled
+    types: [auto_merge_enabled]
 jobs:
   pr-automerge:
     runs-on: ubuntu-latest
