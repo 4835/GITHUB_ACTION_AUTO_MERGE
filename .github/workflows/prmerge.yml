@@ -1,9 +1,10 @@
 name: PR Merge
 on:
-  pull_request_target:
-    types: [auto_merge_enabled]
+  pull_request_review:
+    types: [submitted]
 jobs:
   pr-automerge:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
     - uses: davideviolante/pr-automerge-action@v1.2.2
