@@ -12,7 +12,7 @@ jobs:
           mkdir -p ./pr
           echo ${{ github.server_url }}/${{ github.repository }}/pull/$PR_NUMBER > ./pr/NR
         env :
-          PR_NUMBER: ${{ github.event.number }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
       - uses: actions/upload-artifact@v2
         with:
           name: pr
